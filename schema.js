@@ -1,7 +1,7 @@
-import { GraphQLSchema, GraphQLObjectType, GraphQLInt,
-  GraphQLString, GraphQLNonNull } from 'graphql';
+import { GraphQLSchema, GraphQLObjectType,
+         GraphQLInt, GraphQLString, GraphQLNonNull } from 'graphql';
 
-let integer = 500;
+let integer = 600;
 
 var schema = new GraphQLSchema({
   query: new GraphQLObjectType({
@@ -9,7 +9,7 @@ var schema = new GraphQLSchema({
     fields: () => ({
       integer: {
         type: GraphQLInt,
-        resolve: () => 499
+        resolve: () => integer
       }
     })
   }),
@@ -19,7 +19,7 @@ var schema = new GraphQLSchema({
     fields: () => ({
       increment: {
         type: GraphQLInt,
-        resolve: () => ++integer
+        resolve: () => integer++
       }
     })
   }),
